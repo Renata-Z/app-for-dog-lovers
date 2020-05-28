@@ -1,9 +1,10 @@
 import React from "react";
 import { getFacts } from "../service/getRequest";
+import { arrToStringandObj } from "../service/transformCatsToDogs";
 import "./Button.css";
 
 export class Button extends React.Component {
-  isSame = (arr, newFact) => arr.some((el) => el.text === newFact)
+  isSame = (arr, newFact) => arr.some((el) => el.text === newFact);
 
   getFactApi = async () => {
     try {
@@ -11,7 +12,8 @@ export class Button extends React.Component {
       if (this.isSame(this.props.facts, data.text)) {
         data = await getFacts(1);
       } else {
-        this.props.onNewFact(data);
+        let modifiedData = arrToStringandObj(data);
+        this.props.onNewFact(modifiedData);
       }
     } catch (error) {
       this.props.onError(error.message);
@@ -20,8 +22,8 @@ export class Button extends React.Component {
 
   render() {
     return (
-      <button className="button-get-fact" onClick={this.getFactApi}>
-        Click the button to get a new fact!
+      <button className="button_get_fact" onClick={this.getFactApi}>
+        Click on the button to get a new fact!
       </button>
     );
   }

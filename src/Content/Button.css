@@ -1,0 +1,10 @@
+.button_get_fact {
+  background-color: #151515;
+  color: #e2e5ea;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px #312927;
+}

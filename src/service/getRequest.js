@@ -1,6 +1,6 @@
 export const getFacts = async (amount) => {
   const url = "https://cat-fact.herokuapp.com/";
-  const endpoint = `facts/random?animal_type=dog&amount=${amount}`;
+  const endpoint = `facts/random?animal_type=cat&amount=${amount}`;
   const urlToFetch = `${url}${endpoint}`;
   const response = await fetch(urlToFetch);
   if (response.ok) {
