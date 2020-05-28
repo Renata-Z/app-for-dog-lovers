@@ -1,6 +1,6 @@
 const replaceCatToDog = (obj) => {
-  let oldFact = obj.text;
-  let factArr = oldFact.split(" ");
+  const oldFact = obj.text;
+  const factArr = oldFact.split(" ");
   return factArr.map((word) => {
     if ( word === "cat" || word === "lion" || word === "cheetah" || word === "housecat" || word === "gato") {
       return (word = "dog");
@@ -39,8 +39,8 @@ const replaceCatToDog = (obj) => {
 };
 
 export const arrToStringandObj = (obj) => {
-  let modifiedFactArr = replaceCatToDog(obj);
-  let modifiedFact = modifiedFactArr.join(" ");
+  const modifiedFactArr = replaceCatToDog(obj);
+  const modifiedFact = modifiedFactArr.join(" ");
   return { ...obj, modifiedFact: modifiedFact };
 };
 

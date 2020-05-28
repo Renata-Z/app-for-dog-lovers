@@ -12,7 +12,7 @@ export class Button extends React.Component {
       if (this.isSame(this.props.facts, data.text)) {
         data = await getFacts(1);
       } else {
-        let modifiedData = arrToStringandObj(data);
+        const modifiedData = arrToStringandObj(data);
         this.props.onNewFact(modifiedData);
       }
     } catch (error) {
